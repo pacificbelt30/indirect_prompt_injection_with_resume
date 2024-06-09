@@ -1,0 +1,49 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.drop-area {
+  flex: 1;
+  border: 2px dashed #ccc;
+  padding: 20px;
+  margin-right: 20px;
+  min-height: 300px; /* 高さを指定 */
+  display: flex; /* Flexbox で内部要素を配置 */
+  flex-direction: column; /* 縦方向に配置 */
+  justify-content: center; /* 垂直方向中央揃え */
+  align-items: center; /* 水平方向中央揃え */
+}
+
+.drop-area p {
+  font-size: 24px; /* フォントサイズを大きく */
+  margin-bottom: 10px; /* 下のマージン */
+}
+
+#result {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 15px;
+  min-height: 300px; /* 高さを指定 */
+}
+
+.drop-area button {
+  display: block; /* ブロック要素として表示 */
+  margin: 20px auto; /* 上下20px、左右autoで中央揃え */
+  padding: 10px 20px;
+  background-color: #4CAF50; /* 緑色の背景 */
+  color: white; /* 白色の文字 */
+  border: none; /* 枠線をなし */
+  border-radius: 5px; /* 角丸 */
+  cursor: pointer; /* カーソルをポインターに */
+}
+
+#loading-message {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+}
