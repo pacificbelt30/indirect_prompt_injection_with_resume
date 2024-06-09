@@ -13,9 +13,11 @@ pdfForm.addEventListener('submit', async (event) => {
 
   // ローディング中の表示を開始
   const loadingMessage = document.createElement('p');
-  loadingMessage.textContent = '処理中...';
+  loadingMessage.textContent = 'AI によって判定中...';
   loadingMessage.id = 'loading-message';
   result.appendChild(loadingMessage);
+
+  // ... (PDF送信、レスポンス処理) ...
 
   const formData = new FormData();
   formData.append('pdf', pdfFile.files[0]);
@@ -40,9 +42,6 @@ pdfForm.addEventListener('submit', async (event) => {
     summaryField.textContent = 'エラーが発生しました。';
     evaluationField.textContent = error.message;
   }
-
-
-  // ... (PDF送信、レスポンス処理) ...
 
   // ローディング中の表示を終了
   result.removeChild(loadingMessage); 
