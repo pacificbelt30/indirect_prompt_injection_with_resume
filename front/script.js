@@ -1,7 +1,6 @@
 const pdfForm = document.getElementById('pdf-form');
 const pdfFile = document.getElementById('pdf-file');
 const summaryField = document.getElementById('summary');
-const evaluationField = document.getElementById('evaluation');
 const uploadButton = document.getElementById('upload');
 
 uploadButton.addEventListener('click', async (event) => {
@@ -35,12 +34,10 @@ pdfForm.addEventListener('submit', async (event) => {
 
     const result = await Promise.race([response.json(), timeoutPromise]);
 
-    summaryField.textContent = result.result || '要約を取得できませんでした。';
-    evaluationField.textContent = result.evaluation || '総評を取得できませんでした。';
+    summaryField.innerHTML = result.result.replace(/\n/g, '<br>') || '要約を取得できませんでした。';
 
   } catch (error) {
-    summaryField.textContent = 'エラーが発生しました。';
-    evaluationField.textContent = error.message;
+    summaryField.textContent = 'エラーが発生しました。'+error.message;
   }
 
   // ローディング中の表示を終了
