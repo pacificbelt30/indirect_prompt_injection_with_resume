@@ -29,10 +29,6 @@ async def analyze_pdf(pdf: Optional[UploadFile] = None):
 
         # AI処理を実行 (pdf.filename を渡す)
         result = ai_eval(pdf.filename)
-        return JSONResponse({
-            "result": "要約ですー",
-            "evaluation": "eval"
-        })
 
         return JSONResponse({
             "result": result.get("result", "判定結果を取得できませんでした。"),
